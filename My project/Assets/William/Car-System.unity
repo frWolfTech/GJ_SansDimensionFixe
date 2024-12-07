@@ -612,7 +612,6 @@ GameObject:
   - component: {fileID: 639878164}
   - component: {fileID: 639878167}
   - component: {fileID: 639878166}
-  - component: {fileID: 639878165}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -635,27 +634,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1039761467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &639878165
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 639878163}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &639878166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1170,8 +1148,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.7331358, z: 1}
+  m_Center: {x: 0, y: 0.13343228, z: 0}
 --- !u!23 &1039761470
 MeshRenderer:
   m_ObjectHideFlags: 0

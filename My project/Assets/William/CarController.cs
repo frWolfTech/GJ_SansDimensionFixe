@@ -3,7 +3,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     public WheelCollider frontLeftWheelCollider, frontRightWheelCollider, rearLeftWheelCollider, rearRightWheelCollider;
-    public Transform frontLeftWheelMesh, frontRightWheelMesh, rearLeftWheelMesh, rearRightWheelMesh;
+    //public Transform frontLeftWheelMesh, frontRightWheelMesh, rearLeftWheelMesh, rearRightWheelMesh;
 
     private float maxMotorForce = 12000f, brakeForce = 800f, maxSteerAngle = 30f;
     private float accelerationRate = 10f, idleDeceleration = 20f; 
@@ -14,7 +14,8 @@ public class CarController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.centerOfMass = new Vector3(0f, -0.5f, 0f);
+        //rb.centerOfMass = new Vector3(0f, -0.5f, 0f);
+
     }
 
     void FixedUpdate()
@@ -59,7 +60,7 @@ public class CarController : MonoBehaviour
             {
                 if (rb.velocity.magnitude > 0.1f && rb.velocity.z > 0)
                 {
-                    Debug.Log("Ralentissement");
+                    //Debug.Log("Ralentissement");
                     currentMotorForce = 0.0f;
 
                     rearLeftWheelCollider.motorTorque = 0;
@@ -120,10 +121,10 @@ public class CarController : MonoBehaviour
 
     private void UpdateWheels()
     {
-        UpdateWheelPosition(frontLeftWheelCollider, frontLeftWheelMesh);
-        UpdateWheelPosition(frontRightWheelCollider, frontRightWheelMesh);
-        UpdateWheelPosition(rearLeftWheelCollider, rearLeftWheelMesh);
-        UpdateWheelPosition(rearRightWheelCollider, rearRightWheelMesh);
+        //UpdateWheelPosition(frontLeftWheelCollider, frontLeftWheelMesh);
+        //UpdateWheelPosition(frontRightWheelCollider, frontRightWheelMesh);
+        //UpdateWheelPosition(rearLeftWheelCollider, rearLeftWheelMesh);
+        //UpdateWheelPosition(rearRightWheelCollider, rearRightWheelMesh);
     }
 
     private void UpdateWheelPosition(WheelCollider collider, Transform wheelMesh)
