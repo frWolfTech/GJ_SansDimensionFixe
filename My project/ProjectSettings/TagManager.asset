@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - Burnable
+  - Erasable
   layers:
   - Default
   - TransparentFX
