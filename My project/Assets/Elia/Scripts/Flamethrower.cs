@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    [SerializeField]
-    private ParticleSystem ShootinghSystem;
+
     [SerializeField]
     private ParticleSystem Fire;
 
@@ -44,12 +43,17 @@ public class NewBehaviourScript : MonoBehaviour
     private void Shoot()
     {
         PutEnemyOnFire();
-        //ShootinghSystem.gameObject.SetActive(true);
+        Fire.Play();
+        
     }
 
     private void StopShooting()
     {
-        //ShootinghSystem.gameObject.SetActive(false);
+        Fire.Stop();
+    }
+    private void Start()
+    {
+        Fire.Stop();
     }
 
     private void Update()
