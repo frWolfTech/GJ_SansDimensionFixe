@@ -8,6 +8,8 @@ public class planeAssetsScript : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(camTransform.position);
+        Vector3 lookPos = camTransform.position;
+        lookPos.y = transform.position.y;
+        transform.LookAt(lookPos);
     }
 }
