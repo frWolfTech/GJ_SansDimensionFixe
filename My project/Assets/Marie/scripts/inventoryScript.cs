@@ -6,12 +6,12 @@ public class inventoryScript : MonoBehaviour
 {
     public static inventoryScript instance;
 
-    [SerializeField] bool hasFragmentPaper;
-    [SerializeField] bool hasFragmentPixel;
-    [SerializeField] bool hasFragmentSugar;
-    [SerializeField] bool hasFlameThrower;
-    [SerializeField] bool hasEraser;
-    [SerializeField] bool hasChomper;
+    public bool hasFragmentPaper;
+    public bool hasFragmentPixel;
+    public bool hasFragmentSugar;
+    public bool hasFlameThrower;
+    public bool hasEraser;
+    public bool hasChomper;
     public Vector3 carPosition;
     public Quaternion carRotation;
 
