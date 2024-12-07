@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 
 public class playerInventoryControl : MonoBehaviour
@@ -18,5 +19,6 @@ public class playerInventoryControl : MonoBehaviour
     public void setChomper()
     {
         chomper.SetActive(true);
+        GetComponent<gameScriptControl>().getGameText("You got a chomper, use it in the sugar world");
     }
 }
