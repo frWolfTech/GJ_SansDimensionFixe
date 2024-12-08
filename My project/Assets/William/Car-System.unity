@@ -6439,7 +6439,7 @@ Transform:
   m_GameObject: {fileID: 864027601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 217.6, y: 0.56721145, z: 234.2}
+  m_LocalPosition: {x: 217.6, y: 0.56721145, z: 221.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11105,7 +11105,7 @@ MonoBehaviour:
   hasChomper: 0
   carPosition: {x: 0, y: 0, z: 0}
   carRotation: {x: 0, y: 0, z: 0, w: 0}
-  gasPercent: 0
+  gasPercent: 1
 --- !u!4 &1488661591
 Transform:
   m_ObjectHideFlags: 0
