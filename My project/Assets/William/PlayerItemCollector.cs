@@ -36,6 +36,16 @@ public class PlayerItemCollector : MonoBehaviour
 
         Debug.Log("==============================");
 
+        
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    void Update()
+    {
         if (SingletonGlobal.Instance.hasChomper)
         {
             power1.SetActive(true);
@@ -65,15 +75,6 @@ public class PlayerItemCollector : MonoBehaviour
         {
             power2.SetActive(false);
         }
-    }
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-
-    void Update()
-    {
         // Gestion de la collecte
         if (currentItem != null && Input.GetKey(collectKey))
         {
