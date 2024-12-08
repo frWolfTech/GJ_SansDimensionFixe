@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 7512718966311906402}
   - component: {fileID: 4409091360136804985}
   - component: {fileID: 1794540126422222234}
+  - component: {fileID: -2959032402008560328}
   m_Layer: 0
   m_Name: SAPAIN
-  m_TagString: Erasable
+  m_TagString: Burnable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,9 +66,9 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b98b7f460785bb14e8b5ec9b2979cfd3, type: 2}
-  - {fileID: -876546973899608171, guid: f4e94a2be8cce58418eefe959c2977e3, type: 3}
+  - {fileID: -876546973899608171, guid: 892f27627fca9834399455e93699e426, type: 3}
   - {fileID: -876546973899608171, guid: 06ae1e5473c9fb84e9288e2e22563050, type: 3}
+  - {fileID: -876546973899608171, guid: f4e94a2be8cce58418eefe959c2977e3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,17 +116,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6593437296527203097}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2163924454c772442a2dc2db3be8c790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
   IsDead: 0
-  _mesh: {fileID: 4463455582984418509}
-  VFXGraph: {fileID: 0}
-  _dissolveRate: 0.0125
-  _refreshRate: 0.025
+  m_Renderer: {fileID: 0}
 --- !u!65 &4409091360136804985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -174,3 +172,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &-2959032402008560328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593437296527203097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9e1e14845caab4c9872d1e79c64dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 200
+  IsDead: 0
+  _skinnedMesh: {fileID: 0}
+  _mesh: {fileID: 4463455582984418509}
+  VFXGraph: {fileID: 0}
+  _dissolveRate: 0.0125
+  _refreshRate: 0.025
