@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/William/Monde3.unity
     guid: 699cebd92458ec34d8704d522140f8b5
+  - enabled: 1
+    path: Assets/Elia/Scenes/Sketch.unity
+    guid: 08356726f8598104caf82dfead8f439a
+  - enabled: 1
+    path: Assets/Elia/Scenes/Pixels.unity
+    guid: 516641e3a31083b47baefddf70ca53eb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1893b09ff5bb4f84f977cedfb11c0c2c,
       type: 2}

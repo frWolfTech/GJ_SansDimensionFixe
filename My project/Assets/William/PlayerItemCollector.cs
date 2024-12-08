@@ -4,6 +4,8 @@ using TMPro;
 
 public class PlayerItemCollector : MonoBehaviour
 {
+    public static PlayerItemCollector Instance;
+
     public float collectTime = 2f; // Temps nécessaire pour collecter un objet
     private float collectProgress = 0f; // Progression actuelle
     public KeyCode collectKey = KeyCode.E; // Touche pour collecter
@@ -13,6 +15,22 @@ public class PlayerItemCollector : MonoBehaviour
     private GameObject currentItem; // L'objet actuellement collecté
 
     public GameObject power1, power2, power3;
+
+    void Start()
+    {
+        Debug.Log("=== État du SingletonGlobal ===");
+
+        Debug.Log($"hasChomper: {SingletonGlobal.Instance.hasChomper}");
+        Debug.Log($"hasFlameThrower: {SingletonGlobal.Instance.hasFlameThrower}");
+        Debug.Log($"hasEraser: {SingletonGlobal.Instance.hasEraser}");
+
+        Debug.Log("==============================");
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Update()
     {
@@ -77,16 +95,23 @@ public class PlayerItemCollector : MonoBehaviour
         {
             if (currentItem.name == "Dentier")
             {
-                playerSwitchDimensions switchDim = GetComponent<playerSwitchDimensions>();
-                switchDim.hasChomper = true;
+                SingletonGlobal.Instance.hasChomper = true; // Rendre persistant
                 power1.SetActive(true);
-
-
+            }
+            if (currentItem.name == "LanceFlamme")
+            {
+                SingletonGlobal.Instance.hasFlameThrower = true; // Rendre persistant
+                power3.SetActive(true);
+            }
+            if (currentItem.name == "Gomme")
+            {
+                SingletonGlobal.Instance.hasEraser = true; // Rendre persistant
+                power2.SetActive(true);
             }
             Debug.Log("Other item collected.");
         }
 
-        Destroy(currentItem); // Détruire l'objet collecté
+        Destroy(currentItem); 
         ResetProgress();
     }
 
