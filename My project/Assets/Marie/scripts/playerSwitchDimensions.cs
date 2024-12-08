@@ -49,6 +49,9 @@ public class playerSwitchDimensions : MonoBehaviour
         if (canTeleport) { 
             inventoryScript.instance.carPosition = transform.position;
             inventoryScript.instance.carRotation = transform.rotation;
+            goToNextScene.action.performed -= goNext;
+            goToPreviousScene.action.performed -= goPrevious;
+            ability.action.performed -= useActiveAbility;
             SceneManager.LoadScene(nextScene);
         }
     }
@@ -58,6 +61,9 @@ public class playerSwitchDimensions : MonoBehaviour
         {
             inventoryScript.instance.carPosition = transform.position;
             inventoryScript.instance.carRotation = transform.rotation;
+            goToNextScene.action.performed -= goNext;
+            goToPreviousScene.action.performed -= goPrevious;
+            ability.action.performed -= useActiveAbility;
             SceneManager.LoadScene(previousScene);
         }
     }
