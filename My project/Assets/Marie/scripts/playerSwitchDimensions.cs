@@ -18,6 +18,7 @@ public class playerSwitchDimensions : MonoBehaviour
     public bool hasChomper = false;
 
     public GameObject car;
+    public GameObject distorsion;
 
     void Awake()
     {
@@ -27,24 +28,25 @@ public class playerSwitchDimensions : MonoBehaviour
             transform.rotation = car.transform.rotation;
         }
 
-        Invoke(nameof(setTeleportPossible), 1);
+        Invoke(nameof(setTeleportPossible), 2); // Débloquer la téléportation après 2 secondes
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.G) && canTeleport)
         {
-            TeleportToNextScene();
+            StartTeleportation(nextScene);
         }
         if (Input.GetKeyDown(KeyCode.H) && canTeleport)
         {
-            TeleportToPreviousScene();
+            StartTeleportation(previousScene);
         }
     }
 
-    private void TeleportToNextScene()
+    private void StartTeleportation(string sceneName)
     {
-        Debug.Log("Téléportation vers la scène suivante");
+        distorsion.SetActive(true); // Activer la distorsion
+        Debug.Log("Activation de la distorsion. Changement de scène imminent.");
 
         if (car != null)
         {
@@ -52,24 +54,18 @@ public class playerSwitchDimensions : MonoBehaviour
             car.transform.rotation = transform.rotation;
         }
 
-        SceneManager.LoadScene(nextScene);
+        StartCoroutine(ChangeSceneAfterDelay(sceneName, 2f)); // Utiliser une coroutine pour gérer le délai
     }
 
-    private void TeleportToPreviousScene()
+    private System.Collections.IEnumerator ChangeSceneAfterDelay(string sceneName, float delay)
     {
-        Debug.Log("Téléportation vers la scène précédente");
-
-        if (car != null)
-        {
-            car.transform.position = transform.position;
-            car.transform.rotation = transform.rotation;
-        }
-
-        SceneManager.LoadScene(previousScene);
+        yield return new WaitForSeconds(delay); // Attendre le délai spécifié
+        Debug.Log($"Téléportation vers la scène : {sceneName}");
+        SceneManager.LoadScene(sceneName); // Charger la scène cible
     }
 
     private void setTeleportPossible()
     {
-        canTeleport = true;
+        canTeleport = true; // Autoriser la téléportation après un délai
     }
 }
