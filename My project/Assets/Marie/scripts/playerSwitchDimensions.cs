@@ -39,9 +39,6 @@ public class playerSwitchDimensions : MonoBehaviour
         Debug.Log("T�l�portation vers la sc�ne suivante");
         inventoryScript.instance.carPosition = transform.position;
         inventoryScript.instance.carRotation = transform.rotation;
-        goToNextScene.action.performed -= goNext;
-        goToPreviousScene.action.performed -= goPrevious;
-        ability.action.performed -= useActiveAbility;
         SceneManager.LoadScene(nextScene);
     }
 
@@ -50,9 +47,6 @@ public class playerSwitchDimensions : MonoBehaviour
         Debug.Log("T�l�portation vers la sc�ne pr�c�dente");
         inventoryScript.instance.carPosition = transform.position;
         inventoryScript.instance.carRotation = transform.rotation;
-        goToNextScene.action.performed -= goNext;
-        goToPreviousScene.action.performed -= goPrevious;
-        ability.action.performed -= useActiveAbility;
         SceneManager.LoadScene(previousScene);
     }
 
