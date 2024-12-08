@@ -7,7 +7,6 @@ public class PlayerItemCollector : MonoBehaviour
     public float collectTime = 2f; // Temps nécessaire pour collecter un objet
     private float collectProgress = 0f; // Progression actuelle
     public KeyCode collectKey = KeyCode.E; // Touche pour collecter
-    public Slider progressBar; // Barre de progression
     public TMP_Text progressText; // Texte pour afficher le pourcentage
 
     private bool isCollecting = false; // La collecte est en cours
@@ -26,8 +25,6 @@ public class PlayerItemCollector : MonoBehaviour
 
             // Avancer la progression
             collectProgress += Time.deltaTime / collectTime;
-            if (progressBar)
-                progressBar.value = collectProgress;
 
             if (progressText)
                 progressText.text = $"{Mathf.Clamp(collectProgress * 100f, 0f, 100f):0}%"; // Afficher le pourcentage
@@ -44,14 +41,9 @@ public class PlayerItemCollector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Item"))
+        if (other.CompareTag("Item") || other.CompareTag("Gasoline")) // Combine les deux tags
         {
             currentItem = other.gameObject; // Sauvegarder l'objet en interaction
-            if (progressBar)
-            {
-                progressBar.gameObject.SetActive(true); // Afficher la barre
-                progressBar.value = 0f; // Réinitialiser visuellement
-            }
             if (progressText)
             {
                 progressText.gameObject.SetActive(true); // Afficher le texte
@@ -62,12 +54,10 @@ public class PlayerItemCollector : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Item"))
+        if (other.CompareTag("Item") || other.CompareTag("Gasoline"))
         {
             currentItem = null; // Réinitialiser l'objet en interaction
             ResetProgress();
-            if (progressBar)
-                progressBar.gameObject.SetActive(false); // Masquer la barre
             if (progressText)
                 progressText.gameObject.SetActive(false); // Masquer le texte
         }
@@ -75,11 +65,17 @@ public class PlayerItemCollector : MonoBehaviour
 
     private void CollectItem()
     {
-        Debug.Log($"Item collected: {currentItem.name}");
-        if(currentItem.TryGetComponent<GasScript>(out GasScript scriptf))
+        if (currentItem.CompareTag("Gasoline"))
         {
-            inventoryScript.instance.gasPercent += 0.4f;
+            GasScript gasScript = GetComponent<GasScript>();
+            gasScript.FillGaz();
+
         }
+        else if (currentItem.CompareTag("Item"))
+        {
+            Debug.Log("Other item collected.");
+        }
+
         Destroy(currentItem); // Détruire l'objet collecté
         ResetProgress();
     }
@@ -88,8 +84,6 @@ public class PlayerItemCollector : MonoBehaviour
     {
         isCollecting = false;
         collectProgress = 0f;
-        if (progressBar)
-            progressBar.value = 0f;
         if (progressText)
             progressText.text = "0%";
     }

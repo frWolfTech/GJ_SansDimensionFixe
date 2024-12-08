@@ -9,6 +9,7 @@ TagManager:
   - Erasable
   - Item
   - Eatable
+  - Gasoline
   layers:
   - Default
   - TransparentFX

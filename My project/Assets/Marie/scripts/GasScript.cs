@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;  // Nécessaire pour travailler avec l'UI dans Unity
+using UnityEngine.UI;
 
 public class GasScript : MonoBehaviour
 {
-    public float gasPercent = 1f; // Valeur initiale de gaz (100%)
+    private float curGasPercent = 1f; 
 
-    public Slider gasBar; // Référence à l'UI Image qui représente la barre de gaz
+    public Slider gasBar; 
 
     private void Awake()
     {
@@ -14,18 +14,19 @@ public class GasScript : MonoBehaviour
 
     private void Loose1PercentGas()
     {
-        gasPercent -= 0.1f; // Réduit de 1% (0.01)
-
-        if (gasPercent < 0f)
-        {
-            gasPercent = 0f; // Empêcher le gaz de devenir négatif
-        }
+        curGasPercent -= 0.1f; 
     }
 
     void Update()
     {
-        gasBar.fillAmount = gasPercent;
+        gasBar.value = curGasPercent;
 
-        Debug.Log("Gas Percent: " + gasPercent);
+        Debug.Log("Gas Percent: " + curGasPercent);
+    }
+
+    public void FillGaz()
+    {
+        Debug.Log("Gasoline collected!");
+        curGasPercent = 1f;
     }
 }
