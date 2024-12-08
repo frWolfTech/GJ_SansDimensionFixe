@@ -14,7 +14,7 @@ public class CarController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //rb.centerOfMass = new Vector3(0f, -0.5f, 0f);
+        rb.centerOfMass = new Vector3(-2f, 0.0f, 2f);
 
     }
 
@@ -55,6 +55,13 @@ public class CarController : MonoBehaviour
 
             rearLeftWheelCollider.motorTorque = verticalInput * currentMotorForce;
             rearRightWheelCollider.motorTorque = verticalInput * currentMotorForce;
+
+            float factor = 1f;
+            if (verticalInput < 0)
+            {
+                factor *= 8f;
+            }
+            rb.velocity += transform.forward * 0.1f * verticalInput * factor;
 
             if (verticalInput < 0) 
             {
