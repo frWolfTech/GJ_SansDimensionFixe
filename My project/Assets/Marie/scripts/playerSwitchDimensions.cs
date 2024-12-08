@@ -9,6 +9,18 @@ public class playerSwitchDimensions : MonoBehaviour
     public float speed = 10f;
     private bool canTeleport = false;
 
+    // Inventaire
+    public bool hasFragmentPaper;
+    public bool hasFragmentPixel;
+    public bool hasFragmentSugar;
+    public bool hasFlameThrower;
+    public bool hasEraser;
+    public bool hasChomper;
+
+    public GameObject car;
+    public GameObject GUI;
+
+
     void Awake()
     {
         if (inventoryScript.instance != null)
@@ -22,31 +34,41 @@ public class playerSwitchDimensions : MonoBehaviour
 
     private void Update()
     {
-        // D�tection du clic gauche pour aller � la sc�ne suivante
-        if (Input.GetMouseButtonDown(0) && canTeleport) // 0 = Clic gauche
+        if (Input.GetKeyDown(KeyCode.G) && canTeleport)
         {
-            TeleportToNextScene();
+            GUI.GetComponent<catDialogScript>().showText("Teleporting...");
+            Invoke(nameof(TeleportToNextScene), 2);
         }
-
-        if (Input.GetMouseButtonDown(1) && canTeleport) 
+        if (Input.GetKeyDown(KeyCode.H) && canTeleport)
         {
-            TeleportToPreviousScene();
+            GUI.GetComponent<catDialogScript>().showText("Teleporting...");
+            Invoke(nameof(TeleportToPreviousScene), 2);
         }
     }
 
     private void TeleportToNextScene()
     {
-        Debug.Log("T�l�portation vers la sc�ne suivante");
-        inventoryScript.instance.carPosition = transform.position;
-        inventoryScript.instance.carRotation = transform.rotation;
+        Debug.Log("Téléportation vers la scène suivante");
+
+        if (car != null)
+        {
+            car.transform.position = transform.position;
+            car.transform.rotation = transform.rotation;
+        }
+
         SceneManager.LoadScene(nextScene);
     }
 
     private void TeleportToPreviousScene()
     {
-        Debug.Log("T�l�portation vers la sc�ne pr�c�dente");
-        inventoryScript.instance.carPosition = transform.position;
-        inventoryScript.instance.carRotation = transform.rotation;
+        Debug.Log("Téléportation vers la scène précédente");
+
+        if (car != null)
+        {
+            car.transform.position = transform.position;
+            car.transform.rotation = transform.rotation;
+        }
+
         SceneManager.LoadScene(previousScene);
     }
 
