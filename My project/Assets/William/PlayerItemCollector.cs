@@ -22,7 +22,7 @@ public class PlayerItemCollector : MonoBehaviour
             if (!isCollecting)
             {
                 isCollecting = true;
-                collectProgress = 0f; // Réinitialiser la progression
+                collectProgress = 0f;
             }
 
             // Avancer la progression
