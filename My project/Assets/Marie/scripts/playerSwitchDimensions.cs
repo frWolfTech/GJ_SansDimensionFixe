@@ -18,7 +18,6 @@ public class playerSwitchDimensions : MonoBehaviour
     public bool hasChomper;
 
     public GameObject car;
-    public GameObject GUI;
 
     void Awake()
     {
@@ -35,15 +34,14 @@ public class playerSwitchDimensions : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G) && canTeleport)
         {
-            GUI.GetComponent<catDialogScript>().showText("Teleporting...");
-            Invoke(nameof(TeleportToNextScene), 2);
+            TeleportToNextScene();
         }
         if (Input.GetKeyDown(KeyCode.H) && canTeleport)
         {
-            GUI.GetComponent<catDialogScript>().showText("Teleporting...");
-            Invoke(nameof(TeleportToPreviousScene), 2);
+            TeleportToPreviousScene();
         }
     }
+
     private void TeleportToNextScene()
     {
         Debug.Log("Téléportation vers la scène suivante");
