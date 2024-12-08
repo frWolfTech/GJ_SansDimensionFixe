@@ -21,12 +21,12 @@ public class GasScript : MonoBehaviour
     {
         gasBar.value = curGasPercent;
 
-        Debug.Log("Gas Percent: " + curGasPercent);
+        //Debug.Log("Gas Percent: " + curGasPercent);
     }
 
     public void FillGaz()
     {
-        Debug.Log("Gasoline collected!");
+        //Debug.Log("Gasoline collected!");
         curGasPercent = 1f;
     }
 }

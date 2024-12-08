@@ -18,13 +18,53 @@ public class PlayerItemCollector : MonoBehaviour
 
     void Start()
     {
+        // Afficher les informations du SingletonGlobal
         Debug.Log("=== État du SingletonGlobal ===");
 
+        // Lire les données du fichier et afficher les variables persistantes
+        string fileData = SingletonGlobal.Instance.ReadFromFile();
+        if (fileData != null)
+        {
+            Debug.Log("Données lues depuis le fichier : ");
+            Debug.Log(fileData);
+        }
+
+        // Afficher l'état actuel des variables persistantes
         Debug.Log($"hasChomper: {SingletonGlobal.Instance.hasChomper}");
         Debug.Log($"hasFlameThrower: {SingletonGlobal.Instance.hasFlameThrower}");
         Debug.Log($"hasEraser: {SingletonGlobal.Instance.hasEraser}");
 
         Debug.Log("==============================");
+
+        if (SingletonGlobal.Instance.hasChomper)
+        {
+            power1.SetActive(true);
+            Debug.Log("Dentier activé !");
+        }
+        else
+        {
+            power1.SetActive(false);
+        }
+
+        if (SingletonGlobal.Instance.hasFlameThrower)
+        {
+            power3.SetActive(true);
+            Debug.Log("LanceFlamme activé !");
+        }
+        else
+        {
+            power3.SetActive(false);
+        }
+
+        if (SingletonGlobal.Instance.hasEraser)
+        {
+            power2.SetActive(true);
+            Debug.Log("Gomme activée !");
+        }
+        else
+        {
+            power2.SetActive(false);
+        }
     }
 
     private void Awake()
@@ -108,6 +148,10 @@ public class PlayerItemCollector : MonoBehaviour
                 SingletonGlobal.Instance.hasEraser = true; // Rendre persistant
                 power2.SetActive(true);
             }
+
+            // Sauvegarder les variables persistantes dans le fichier après collecte
+            SingletonGlobal.Instance.WriteVariablesToFile();
+
             Debug.Log("Other item collected.");
         }
 
