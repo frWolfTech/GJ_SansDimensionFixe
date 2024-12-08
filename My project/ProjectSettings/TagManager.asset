@@ -7,6 +7,8 @@ TagManager:
   - Fire
   - Burnable
   - Erasable
+  - Item
+  - Eatable
   layers:
   - Default
   - TransparentFX
