@@ -22,14 +22,12 @@ public class playerSwitchDimensions : MonoBehaviour
 
     private void Update()
     {
-        // Détection du clic gauche pour aller à la scène suivante
-        if (Input.GetMouseButtonDown(0) && canTeleport) // 0 = Clic gauche
+
+        if (Input.GetKeyDown(KeyCode.G) && canTeleport)
         {
             TeleportToNextScene();
         }
-
-
-        if (Input.GetMouseButtonDown(1) && canTeleport) 
+        if (Input.GetKeyDown(KeyCode.H) && canTeleport)
         {
             TeleportToPreviousScene();
         }

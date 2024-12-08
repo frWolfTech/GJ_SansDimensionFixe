@@ -16,6 +16,8 @@ public class CarController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(-2f, 0.0f, 2f);
 
+        Cursor.lockState = CursorLockMode.Locked;  // Verrouille la souris au centre de l'écran
+        Cursor.visible = false;                    // Rends la souris invisible
     }
 
     void FixedUpdate()
