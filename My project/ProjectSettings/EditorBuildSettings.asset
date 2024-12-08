@@ -5,27 +5,30 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/MainScene.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Marie/Scene1.unity
     guid: 9da5f3b6a4413744c8ef3de5377e230e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Marie/Scene2.unity
     guid: 6a554e25854979746bda052c8f07698b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Marie/Scene3.unity
     guid: 318e1fd52fa4a9341b6f95c34deaf352
-  - enabled: 1
+  - enabled: 0
     path: Assets/William/Monde1.unity
     guid: 5c04573d604d83743a994e7a50c1c27c
-  - enabled: 1
+  - enabled: 0
     path: Assets/William/Monde2.unity
     guid: 108120f14771ed249b701c808040d22f
-  - enabled: 1
+  - enabled: 0
     path: Assets/William/Monde3.unity
     guid: 699cebd92458ec34d8704d522140f8b5
+  - enabled: 1
+    path: Assets/Elia/Scenes/Sucreries.unity
+    guid: cea1814f6a4745a458c545ea21b44398
   - enabled: 1
     path: Assets/Elia/Scenes/Sketch.unity
     guid: 08356726f8598104caf82dfead8f439a
