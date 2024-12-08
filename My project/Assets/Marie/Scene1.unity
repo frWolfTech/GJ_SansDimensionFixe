@@ -849,6 +849,7 @@ MonoBehaviour:
   hasChomper: 0
   carPosition: {x: 0, y: 0, z: 0}
   carRotation: {x: 0, y: 0, z: 0, w: 0}
+  gasPercent: 1
 --- !u!4 &1806299316
 Transform:
   m_ObjectHideFlags: 0
@@ -1357,7 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba8d1fa4e7108444a20b3cd671179d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
 --- !u!1001 &7428427632950219242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1366,6 +1367,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1515859821487975440, guid: 07d1212a32a63b5469338557710f0862,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.11764706
+      objectReference: {fileID: 0}
     - target: {fileID: 2580925424020140718, guid: 07d1212a32a63b5469338557710f0862,
         type: 3}
       propertyPath: m_Pivot.x

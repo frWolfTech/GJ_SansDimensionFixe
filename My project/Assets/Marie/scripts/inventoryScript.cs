@@ -15,6 +15,7 @@ public class inventoryScript : MonoBehaviour
     public Vector3 carPosition;
     public Quaternion carRotation;
 
+    public float gasPercent;
     private void Awake()
     {
         if (instance != null)
@@ -24,7 +25,18 @@ public class inventoryScript : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        Invoke(nameof(loose1percentGas),0.5f);
     }
 
-    
+    private void loose1percentGas()
+    {
+        gasPercent -= 0.01f;
+        if(gasPercent > 0.01)
+        {
+            Invoke(nameof(loose1percentGas), 0.5f);
+        }
+    }
+
+
 }
