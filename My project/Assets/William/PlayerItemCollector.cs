@@ -76,6 +76,10 @@ public class PlayerItemCollector : MonoBehaviour
     private void CollectItem()
     {
         Debug.Log($"Item collected: {currentItem.name}");
+        if(currentItem.TryGetComponent<GasScript>(out GasScript scriptf))
+        {
+            inventoryScript.instance.gasPercent += 0.4f;
+        }
         Destroy(currentItem); // Détruire l'objet collecté
         ResetProgress();
     }

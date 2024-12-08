@@ -16,18 +16,19 @@ public class playerSwitchDimensions : MonoBehaviour
             transform.position = inventoryScript.instance.carPosition;
             transform.rotation = inventoryScript.instance.carRotation;
         }
-
+        Cursor.lockState = CursorLockMode.Locked;
         Invoke(nameof(setTeleportPossible), 1);
     }
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.G) && canTeleport)
+        // Dï¿½tection du clic gauche pour aller ï¿½ la scï¿½ne suivante
+        if (Input.GetMouseButtonDown(0) && canTeleport) // 0 = Clic gauche
         {
             TeleportToNextScene();
         }
-        if (Input.GetKeyDown(KeyCode.H) && canTeleport)
+
+        if (Input.GetMouseButtonDown(1) && canTeleport) 
         {
             TeleportToPreviousScene();
         }
@@ -35,7 +36,7 @@ public class playerSwitchDimensions : MonoBehaviour
 
     private void TeleportToNextScene()
     {
-        Debug.Log("Téléportation vers la scène suivante");
+        Debug.Log("Tï¿½lï¿½portation vers la scï¿½ne suivante");
         inventoryScript.instance.carPosition = transform.position;
         inventoryScript.instance.carRotation = transform.rotation;
         SceneManager.LoadScene(nextScene);
@@ -43,7 +44,7 @@ public class playerSwitchDimensions : MonoBehaviour
 
     private void TeleportToPreviousScene()
     {
-        Debug.Log("Téléportation vers la scène précédente");
+        Debug.Log("Tï¿½lï¿½portation vers la scï¿½ne prï¿½cï¿½dente");
         inventoryScript.instance.carPosition = transform.position;
         inventoryScript.instance.carRotation = transform.rotation;
         SceneManager.LoadScene(previousScene);
