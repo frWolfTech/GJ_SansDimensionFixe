@@ -66,6 +66,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b98b7f460785bb14e8b5ec9b2979cfd3, type: 2}
+  - {fileID: -876546973899608171, guid: f4e94a2be8cce58418eefe959c2977e3, type: 3}
+  - {fileID: -876546973899608171, guid: 06ae1e5473c9fb84e9288e2e22563050, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,7 +122,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   IsDead: 0
-  m_Renderer: {fileID: 1874811011016276313}
+  _mesh: {fileID: 1874811011016276313}
+  VFXGraph: {fileID: 0}
+  _dissolveRate: 0.0125
+  _refreshRate: 0.025
 --- !u!54 &933318342273296879
 Rigidbody:
   m_ObjectHideFlags: 0
