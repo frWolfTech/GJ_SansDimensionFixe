@@ -1,14 +1,16 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class planeAssetsScript : MonoBehaviour
 {
-    public Transform camTransform;
+    [SerializeField]
+    private CinemachineFreeLook camTransform;
 
     void Update()
     {
-        Vector3 lookPos = camTransform.position;
+        Vector3 lookPos = camTransform.transform.position;
         lookPos.y = transform.position.y;
         transform.LookAt(lookPos);
     }

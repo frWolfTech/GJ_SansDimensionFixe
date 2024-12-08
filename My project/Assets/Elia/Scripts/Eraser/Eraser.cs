@@ -9,6 +9,8 @@ public class Eraser : MonoBehaviour
     private List<int> ObjectsToRemove = new List<int>();
     [SerializeField]
     private Animator m_Animator;
+    [SerializeField]
+    private AudioSource m_sound;
 
     private float m_eraseStrenght = 0.002f;
 
@@ -60,6 +62,7 @@ public class Eraser : MonoBehaviour
         {
             if (m_isErasing == false) m_erasingTime = 0f;
             m_isErasing = true;
+            m_sound.Play();
         }
 
         if (m_isErasing)

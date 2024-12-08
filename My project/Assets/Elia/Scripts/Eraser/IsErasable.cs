@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IsErasable : IsAlive
@@ -15,9 +16,14 @@ public class IsErasable : IsAlive
     // Update is called once per frame
     void Update()
     {
-        if (m_Renderer.material.color.a == 0)
+        if (m_Renderer.material.color.a <= 0)
         {
-            IsDead = true;
+            gameObject.SetActive(false);
         }
+
+            //Vector3 lookPos = camTransform.position;
+            //lookPos.y = transform.position.y;
+            //transform.LookAt(lookPos);
+
     }
 }
