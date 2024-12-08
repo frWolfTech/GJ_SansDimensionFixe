@@ -6874,7 +6874,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0
+    Value: 0.5
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -8309,7 +8309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879019050}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.32734853, y: -0.036489263, z: 0.009762185, w: 0.9441484}
+  m_LocalRotation: {x: -0.32734856, y: -0.036489263, z: 0.009762183, w: 0.9441484}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8838,7 +8838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931855776}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.22406521, y: -0.008802301, z: 0.0034056166, w: 0.9745285}
+  m_LocalRotation: {x: -0.22406524, y: -0.008802296, z: 0.0034056148, w: 0.9745285}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10255,7 +10255,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9e61f8a13d491c74196aed41244a726a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 22ab2cf07efd37f4083644465dc0e1ab, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -10353,7 +10353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb180bfa11bdb8f46b74a889701d1d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hornSound: {fileID: 8300000, guid: 9e61f8a13d491c74196aed41244a726a, type: 3}
+  hornSound: {fileID: 8300000, guid: 22ab2cf07efd37f4083644465dc0e1ab, type: 3}
   driveSound: {fileID: 8300000, guid: 304fc60eb73e9af43b2d9c9ec9680db9, type: 3}
   audioSource: {fileID: 1039761470}
   audioSource2: {fileID: 1039761472}
@@ -12885,7 +12885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335778970}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.26263776, y: -0.0018940353, z: 0.00064748834, w: 0.96489245}
+  m_LocalRotation: {x: -0.26263782, y: -0.001894035, z: 0.00064748817, w: 0.96489245}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16160,7 +16160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656686480}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.031817723, y: -0.0020006394, z: 0.000063688, w: 0.9994917}
+  m_LocalRotation: {x: -0.036131263, y: -0.03774788, z: -0.0013657453, w: 0.998633}
   m_LocalPosition: {x: 211.6055, y: 5.2, z: 184.38379}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21379,7 +21379,7 @@ GameObject:
   - component: {fileID: 3381725263998303217}
   m_Layer: 0
   m_Name: Bonbon
-  m_TagString: Untagged
+  m_TagString: Eatable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

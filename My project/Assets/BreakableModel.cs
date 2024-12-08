@@ -3,12 +3,7 @@ using UnityEngine;
 public class BreakableModel : MonoBehaviour
 {
 
-    void Start()
-    {
-        //DetachChildrenAndAddRigidbody();
-    }
-
-    void DetachChildrenAndAddRigidbody()
+    public void DetachChildrenAndAddRigidbody()
     {
         foreach (Transform child in transform)
         {
