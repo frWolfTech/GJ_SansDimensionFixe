@@ -9,6 +9,7 @@ TagManager:
   - Erasable
   - Item
   - Eatable
+  - GUIDH
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Ignore Light
-  - 
+  - GUIDH
   - 
   - 
   - 
