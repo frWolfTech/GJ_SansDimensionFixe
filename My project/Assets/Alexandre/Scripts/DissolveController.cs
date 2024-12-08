@@ -27,7 +27,7 @@ public class DissolveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(DissolveCo());
         }
@@ -42,10 +42,11 @@ public class DissolveController : MonoBehaviour
         }
 
         float counter = 0;
-        while (_materials[0].GetFloat("_DissolveAmount") < 1)
+        _materials[2].SetFloat("_DissolveAmount", 1.2f);
+        while (_materials[0].GetFloat("_DissolveAmount") < 1.1f)
         {
             counter += _dissolveRate;
-            for (int i = 0; i < _materials.Length; i++)
+            for (int i = 0; i < _materials.Length - 1; i++)
             {
                 _materials[i].SetFloat("_DissolveAmount", counter);
             }
