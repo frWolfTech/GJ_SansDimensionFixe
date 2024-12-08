@@ -10,7 +10,6 @@ public class IsErasable : IsAlive
     public void Erase(float percentage)
     {
         m_Renderer.material.color = new Color(m_Renderer.material.color.r, m_Renderer.material.color.g, m_Renderer.material.color.b, m_Renderer.material.color.a - percentage);
-        Debug.Log(m_Renderer.material.color.a);
     }
 
     // Update is called once per frame

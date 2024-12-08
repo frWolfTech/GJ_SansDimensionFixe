@@ -55,6 +55,7 @@ public class Eraser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (m_isErasing == false) m_erasingTime = 0f;

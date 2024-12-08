@@ -8,6 +8,12 @@ public class NewBehaviourScript : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem Fire;
+    [SerializeField]
+    private ParticleSystem Fire1;
+    [SerializeField]
+    private ParticleSystem Fire2;
+    [SerializeField]
+    private ParticleSystem Fire3;
 
     private float BurningDamage = 0.5f;
 
@@ -44,16 +50,25 @@ public class NewBehaviourScript : MonoBehaviour
     {
         PutEnemyOnFire();
         Fire.Play();
+        Fire1.Play();
+        Fire2.Play();
+        Fire3.Play();
         
     }
 
     private void StopShooting()
     {
         Fire.Stop();
+        Fire1.Stop();
+        Fire2.Stop();
+        Fire3.Stop();
     }
     private void Start()
     {
         Fire.Stop();
+        Fire1.Stop();
+        Fire2.Stop();
+        Fire3.Stop();
     }
 
     private void Update()
