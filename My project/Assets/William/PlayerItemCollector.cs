@@ -12,6 +12,8 @@ public class PlayerItemCollector : MonoBehaviour
     private bool isCollecting = false; // La collecte est en cours
     private GameObject currentItem; // L'objet actuellement collecté
 
+    public GameObject power1, power2, power3;
+
     void Update()
     {
         // Gestion de la collecte
@@ -73,6 +75,14 @@ public class PlayerItemCollector : MonoBehaviour
         }
         else if (currentItem.CompareTag("Item"))
         {
+            if (currentItem.name == "Dentier")
+            {
+                playerSwitchDimensions switchDim = GetComponent<playerSwitchDimensions>();
+                switchDim.hasChomper = true;
+                power1.SetActive(true);
+
+
+            }
             Debug.Log("Other item collected.");
         }
 

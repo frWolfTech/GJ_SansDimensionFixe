@@ -10,12 +10,12 @@ public class playerSwitchDimensions : MonoBehaviour
     private bool canTeleport = false;
 
     // Inventaire
-    public bool hasFragmentPaper;
-    public bool hasFragmentPixel;
-    public bool hasFragmentSugar;
-    public bool hasFlameThrower;
-    public bool hasEraser;
-    public bool hasChomper;
+    public bool hasFragmentPaper = false;
+    public bool hasFragmentPixel = false;
+    public bool hasFragmentSugar = false;
+    public bool hasFlameThrower = false;
+    public bool hasEraser = false;
+    public bool hasChomper = false;
 
     public GameObject car;
 
