@@ -9,10 +9,10 @@ public class playerInventoryControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (inventoryScript.instance.hasChomper)
-        {
-            setChomper();
-        }
+        //if (inventoryScript.instance.hasChomper)
+        //{
+        //    setChomper();
+        //}
     }
 
 

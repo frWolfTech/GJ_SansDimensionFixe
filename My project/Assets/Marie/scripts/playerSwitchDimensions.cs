@@ -1,70 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class playerSwitchDimensions : MonoBehaviour
 {
-
-    [Header("Input Action References")]
-    [SerializeField] InputActionReference moving;
-
-    [SerializeField] InputActionReference goToNextScene;
-    [SerializeField] InputActionReference goToPreviousScene;
-    [SerializeField] InputActionReference ability;
-
-
+    [Header("Input Keys")]
     public string nextScene;
     public string previousScene;
-    public float speed = 10;
+    public float speed = 10f;
     private bool canTeleport = false;
 
     void Awake()
     {
-        if(inventoryScript.instance != null)
+        if (inventoryScript.instance != null)
         {
             transform.position = inventoryScript.instance.carPosition;
             transform.rotation = inventoryScript.instance.carRotation;
         }
-        goToNextScene.action.performed += goNext;
-        goToPreviousScene.action.performed += goPrevious;
-        ability.action.performed += useActiveAbility;
-        Invoke(nameof(setTeleportPossible), 5);
-    }
 
+        Invoke(nameof(setTeleportPossible), 1);
+    }
 
     private void Update()
     {
-        Vector2 direction = moving.action.ReadValue<Vector2>();
-        transform.position += transform.forward * direction.y * Time.deltaTime * speed;
-        transform.Rotate(0, direction.x * Time.deltaTime * 120, 0);
-        Cursor.lockState = CursorLockMode.Locked;
-       
-    }
-
-    private void goNext(InputAction.CallbackContext obj)
-    {
-        if (canTeleport) { 
-            inventoryScript.instance.carPosition = transform.position;
-            inventoryScript.instance.carRotation = transform.rotation;
-            SceneManager.LoadScene(nextScene);
-        }
-    }
-    private void goPrevious(InputAction.CallbackContext obj)
-    {
-        if (canTeleport)
+        // Détection du clic gauche pour aller à la scène suivante
+        if (Input.GetMouseButtonDown(0) && canTeleport) // 0 = Clic gauche
         {
-            inventoryScript.instance.carPosition = transform.position;
-            inventoryScript.instance.carRotation = transform.rotation;
-            SceneManager.LoadScene(previousScene);
+            TeleportToNextScene();
+        }
+
+
+        if (Input.GetMouseButtonDown(1) && canTeleport) 
+        {
+            TeleportToPreviousScene();
         }
     }
-    private void useActiveAbility(InputAction.CallbackContext obj)
-    {
 
+    private void TeleportToNextScene()
+    {
+        Debug.Log("Téléportation vers la scène suivante");
+        inventoryScript.instance.carPosition = transform.position;
+        inventoryScript.instance.carRotation = transform.rotation;
+        SceneManager.LoadScene(nextScene);
     }
+
+    private void TeleportToPreviousScene()
+    {
+        Debug.Log("Téléportation vers la scène précédente");
+        inventoryScript.instance.carPosition = transform.position;
+        inventoryScript.instance.carRotation = transform.rotation;
+        SceneManager.LoadScene(previousScene);
+    }
+
     private void setTeleportPossible()
     {
         canTeleport = true;
